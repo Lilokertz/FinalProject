@@ -25,5 +25,20 @@
         {
             return $this->id_user;
         }
+
+        public function setIdCommande($id_commande)
+        {
+            $this->id_commande = $id_commande;
+        }
+
+        public function setIdProduit($id_produit)
+        {
+            $this->id_produit = $id_produit;
+        }
+
+        public function setIdUser($id_user)
+        {
+            $this->id_user = $id_user;
+        }
     }
 ?>

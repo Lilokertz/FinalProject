@@ -37,6 +37,11 @@
             $this->num_commande = $num_commande;
         }
 
+        public function setIdUser($id_user)
+        {
+            $this->id_user = $id_user;
+        }
+
         public function setValeur($valeur)
         {
             $this->valeur = $valeur;

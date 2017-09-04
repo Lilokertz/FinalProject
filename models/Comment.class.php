@@ -36,6 +36,16 @@
         {
             $this->content = $content;
         }
+
+        public function setIdArticle($id_article)
+        {
+            $this->id_article = $id_article;
+        }
+
+        public function setIdAuthor($id_author)
+        {
+            $this->id_author = $id_author;
+        }
     }
 
 ?>
