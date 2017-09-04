@@ -1,8 +1,8 @@
 <?php
 
-    $page = 'home';
+    $page = 'registered';
 
-    $access = ["home"];
+    $access = ["registered"];
 /*
     if (in_array($_GET['page'], $access)) // http://php.net/manual/fr/function.in-array.php
         {

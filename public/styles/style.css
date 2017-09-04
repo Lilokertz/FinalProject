@@ -170,3 +170,20 @@ footer{
 	margin: auto;
 	padding-top: 50px;
 }
+
+/* REGISTERED */
+
+.registered{
+	color: white;
+	text-align: center;
+	background-color: grey;
+	width: 80%;
+	margin: auto;
+}
+
+.registered form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: auto;
+}
