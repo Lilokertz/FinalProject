@@ -14,7 +14,7 @@
         {
             $sql = "SELECT * FROM comments WHERE id=?";
             $query = $this->pdo->prepare($pdo);
-            $query->execute($id);
+            $query->execute([$id]);
             $comments = $query->fetchObject('Comment');
             return $comments;
         }
@@ -30,8 +30,8 @@
             $sql = "INSERT INTO comments (content, id_article, id_author) VALUES (?, ?, ?)";
     		$query = $this->pdo->prepare($sql);
     		$query->execute([$comments->getContent(),
-    						$comments->getId_article(),
-    						$comments->getId_author()]);
+    						$comments->getIdArticle(),
+    						$comments->getIdAuthor()]);
     		$id = $this->pdo->lastInsertId();
     		return $this->findById($id);
         }

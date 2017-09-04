@@ -13,7 +13,7 @@ class PanierManager
     {
         $sql = "SELECT * FROM paniers WHERE id=?";
         $query = $this->pdo->prepare($pdo);
-        $query->execute($id);
+        $query->execute([$id]);
         $paniers = $query->fetchObject('Panier');
         return $paniers;
     }
@@ -28,9 +28,9 @@ class PanierManager
 
         $sql = "INSERT INTO paniers (id_commande, id_produit, id_user) VALUES (?, ?, ?)";
         $query = $this->pdo->prepare($sql);
-        $query->execute([$paniers->getId_commande(),
-                        $paniers->getId_produit(),
-                        $paniers->getId_user()]);
+        $query->execute([$paniers->getIdCommande(),
+                        $paniers->getIdProduit(),
+                        $paniers->getIdUser()]);
         $id = $this->pdo->lastInsertId();
         return $this->findById($id);
     }

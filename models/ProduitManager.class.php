@@ -13,7 +13,7 @@
         {
             $sql = "SELECT * FROM produits WHERE id=?";
             $query = $this->pdo->prepare($pdo);
-            $query->execute($id);
+            $query->execute([$id]);
             $produits = $query->fetchObject('produit');
             return $produits;
         }

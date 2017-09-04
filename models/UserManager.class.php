@@ -14,7 +14,7 @@
         {
             $sql = "SELECT * FROM users WHERE id=?";
             $query = $this->pdo->prepare($pdo);
-            $query->execute($id);
+            $query->execute([$id]);
             $user = $query->fetchObject('User');
             return $user;
         }

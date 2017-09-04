@@ -13,7 +13,7 @@ class CommandeManager
     {
         $sql = "SELECT * FROM commandes WHERE id=?";
         $query = $this->pdo->prepare($pdo);
-        $query->execute($id);
+        $query->execute([$id]);
         $commande = $query->fetchObject('Commande');
         return $commande;
     }
@@ -28,8 +28,8 @@ class CommandeManager
 
         $sql = "INSERT INTO commandes (id_user, num_commande, valeur) VALUES (?, ?, ?)";
 		$query = $this->pdo->prepare($sql);
-		$query->execute([$commande->getId_user(),
-						$commande->getNum_commande(),
+		$query->execute([$commande->getIdUser(),
+						$commande->getNumCommande(),
 						$commande->getValeur()]);
 		$id = $this->pdo->lastInsertId();
 		return $this->findById($id);
