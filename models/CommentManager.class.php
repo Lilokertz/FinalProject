@@ -15,11 +15,11 @@
             $sql = "SELECT * FROM comments WHERE id=?";
             $query = $this->pdo->prepare($pdo);
             $query->execute($id);
-            $comments = $query->fetchObject('comments');
+            $comments = $query->fetchObject('Comments');
             return $comments;
         }
 
-        public function create($content, $id_article, $id_author)
+        public function create($content, $idArticle, $idAuthor)
         {
             $comments = new Comments();
 

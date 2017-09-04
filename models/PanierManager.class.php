@@ -14,13 +14,13 @@ class PanierManager
         $sql = "SELECT * FROM paniers WHERE id=?";
         $query = $this->pdo->prepare($pdo);
         $query->execute($id);
-        $paniers = $query->fetchObject('paniers');
+        $paniers = $query->fetchObject('Paniers');
         return $paniers;
     }
 
-    public function create($id_commande, $id_produit,$id_user)
+    public function create($idCommande, $idProduit,$idUser)
     {
-        $paniers = new Comments();
+        $paniers = new Pannier();
 
         $paniers->setId_commande($id_commande);
         $paniers->setId_produit($id_produit);
@@ -35,7 +35,7 @@ class PanierManager
         return $this->findById($id);
     }
 
-    public function remove(Comments $comments)
+    public function remove(Panier $panier)
     {
         $sql = "DELETE FROM paniers WHERE id=?";
         $query = $this->pdo->prepare($sql);

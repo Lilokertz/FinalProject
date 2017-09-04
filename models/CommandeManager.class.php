@@ -1,5 +1,5 @@
 <?php
-class UserManager
+class CommandeManager
 {
 
     private $pdo;
@@ -14,11 +14,11 @@ class UserManager
         $sql = "SELECT * FROM commandes WHERE id=?";
         $query = $this->pdo->prepare($pdo);
         $query->execute($id);
-        $commande = $query->fetchObject('commande');
+        $commande = $query->fetchObject('Commande');
         return $commande;
     }
 
-    public function create($id_user, $num_commande, $valeur)
+    public function create($idUser, $numCommande, $valeur)
     {
         $commande = new Commande();
 
@@ -29,7 +29,7 @@ class UserManager
         $sql = "INSERT INTO commandes (id_user, num_commande, valeur) VALUES (?, ?, ?)";
 		$query = $this->pdo->prepare($sql);
 		$query->execute([$commande->getId_user(),
-						$commande->getNumCommande(),
+						$commande->getNum_commande(),
 						$commande->getValeur()]);
 		$id = $this->pdo->lastInsertId();
 		return $this->findById($id);
