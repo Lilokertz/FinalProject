@@ -22,12 +22,12 @@
             return $this->date;
         }
 
-        public function getId_article()
+        public function getIdArticle()
         {
             return $this->id_article;
         }
 
-        public function getId_author()
+        public function getIdAuthor()
         {
             return $this->id_author;
         }

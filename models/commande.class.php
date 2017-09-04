@@ -17,12 +17,12 @@
             return $this->date;
         }
 
-        public function getId_user()
+        public function getIdUser()
         {
             return $this->id_user;
         }
 
-        public function getNum_commande()
+        public function getNumCommande()
         {
             return $this->num_commande;
         }
@@ -32,7 +32,7 @@
             return $this->valeur;
         }
 
-        public function setNum_commande($num_commande)
+        public function setNumCommande($num_commande)
         {
             $this->num_commande = $num_commande;
         }

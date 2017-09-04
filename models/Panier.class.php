@@ -11,17 +11,17 @@
             return $this->id;
         }
 
-        public function getId_commande()
+        public function getIdCommande()
         {
             return $this->id_commande;
         }
 
-        public function getId_produit()
+        public function getIdProduit()
         {
             return $this->id_produit;
         }
 
-        public function getId_user()
+        public function getIdUser()
         {
             return $this->id_user;
         }
