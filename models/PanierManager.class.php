@@ -14,7 +14,7 @@ class PanierManager
         $sql = "SELECT * FROM paniers WHERE id=?";
         $query = $this->pdo->prepare($pdo);
         $query->execute($id);
-        $paniers = $query->fetchObject('Paniers');
+        $paniers = $query->fetchObject('Panier');
         return $paniers;
     }
 

@@ -15,7 +15,7 @@
             $sql = "SELECT * FROM comments WHERE id=?";
             $query = $this->pdo->prepare($pdo);
             $query->execute($id);
-            $comments = $query->fetchObject('Comments');
+            $comments = $query->fetchObject('Comment');
             return $comments;
         }
 
