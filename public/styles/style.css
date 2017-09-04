@@ -50,22 +50,22 @@ header .fa{
     text-align: center;
     margin: 0;
     padding: 10px 0 ;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
-.middle{
+.middleHeader{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 30px;
 }
 
-.middle img{
+.middleHeader img{
     width: 15%;
     height: 15%;
 }
 
-.middle p{
+.middleHeader p{
     border: white solid 1px;
     border-radius: 30px;
     padding: 10px 10px;
@@ -96,14 +96,61 @@ header nav ul{
 }
 
 .search input{
-    background-color: transparent;
     border: white solid 1px;
     border-radius: 30px;
     padding: 10px 100px;
+	background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* FOOTER */
 
 footer{
+	background-color: lightgrey;
+	color: white;
+}
 
+.infoSite p{
+	margin: 0 0;
+}
+
+.infoSite ul{
+	display: flex;
+	justify-content: space-around;
+	text-align: center;
+	padding: 20px 0;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.middleFooter{
+	background-color: rgba(0, 0, 0, 0.3);
+	display: flex;
+	justify-content: space-around;
+	text-align: center;
+}
+
+.middleFooter{
+	padding: 20px 0;
+}
+
+.middleFooter h4{
+	margin-top: 0;
+}
+
+.middleFooter div{
+	border: lightgray solid 2px;
+	padding: 10px;
+	border-radius: 20px;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.licence p{
+	margin: 0 0;
+	padding: 10px 0 ;
+	text-align: center;
+	width: 60%;
+	margin: auto;
+}
+
+.licence{
+	background-color: rgba(0, 0, 0, 0.5);
 }
