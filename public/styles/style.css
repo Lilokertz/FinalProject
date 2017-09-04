@@ -3,6 +3,10 @@
 	text-decoration: none;
 }
 
+a{
+    color: white;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -12,4 +16,94 @@ body {
     padding: 0;
     font-size: 1.6rem;
     line-height: 1.6;
+}
+
+img{
+    width: 100;
+}
+
+li{
+    list-style-type: none;
+}
+
+ul{
+    padding-left: 0;
+    margin: 0 0;
+}
+
+/* HEADER */
+
+header{
+    background-image: url("https://www.walldevil.com/wallpapers/w02/849242-artwork-bahamut-dragons-fantasy-art-guild-wars-2-gw2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+header .fa{
+    border: solid white 1px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.offre p{
+    text-align: center;
+    margin: 0;
+    padding: 10px 0 ;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.middle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.middle img{
+    width: 15%;
+    height: 15%;
+}
+
+.middle p{
+    border: white solid 1px;
+    border-radius: 30px;
+    padding: 10px 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+header nav{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+}
+
+header a:hover{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+header a{
+    padding: 14px 20px;
+}
+
+header nav ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+.search{
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 5px 30px;
+}
+
+.search input{
+    background-color: transparent;
+    border: white solid 1px;
+    border-radius: 30px;
+    padding: 10px 100px;
+}
+
+/* FOOTER */
+
+footer{
+
 }
