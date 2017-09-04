@@ -30,7 +30,7 @@ class PanierManager
         $query = $this->pdo->prepare($sql);
         $query->execute([$paniers->getId_commande(),
                         $paniers->getId_produit(),
-                        $paniers->getId_user)]);
+                        $paniers->getId_user()]);
         $id = $this->pdo->lastInsertId();
         return $this->findById($id);
     }

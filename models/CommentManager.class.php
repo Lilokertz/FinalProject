@@ -31,7 +31,7 @@
     		$query = $this->pdo->prepare($sql);
     		$query->execute([$comments->getContent(),
     						$comments->getId_article(),
-    						$comments->getId_author)]);
+    						$comments->getId_author()]);
     		$id = $this->pdo->lastInsertId();
     		return $this->findById($id);
         }

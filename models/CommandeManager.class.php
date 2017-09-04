@@ -30,7 +30,7 @@ class UserManager
 		$query = $this->pdo->prepare($sql);
 		$query->execute([$commande->getId_user(),
 						$commande->getNumCommande(),
-						$commande->getValeur)]);
+						$commande->getValeur()]);
 		$id = $this->pdo->lastInsertId();
 		return $this->findById($id);
     }
