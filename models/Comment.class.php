@@ -34,7 +34,13 @@
 
         public function setContent($content)
         {
-            $this->content = $content;
+            if (strlen($content) >= 20 && strlen($content) <= 4095)
+            {
+                $this->content = $content;
+            }
+            else {
+                throw new Exception("Le contenue de votre commentaire est trop long il doit etre compris entre 20 et 4095 caracteres");
+            }
         }
 
         public function setIdArticle($id_article)

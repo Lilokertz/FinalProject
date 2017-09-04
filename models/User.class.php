@@ -28,12 +28,26 @@
 
         public function setPseudo($pseudo)
         {
-            $this->pseudo = $pseudo;
+            if(strlen($pseudo) >= 4 && strlen($pseudo) <= 63)
+            {
+                $this->pseudo = $pseudo;
+            }
+            else{
+                throw new Exception("Login invalide(La taille doit etre comprise entre 4 et 64 caracteres)")
+            }
         }
 
         public function setPassword($password)
         {
-            $this->password = $password;
+            if(strlen($password) >= 6 && strlen($password) <= 127)
+            {
+                $this->password = $password;
+            }
+            else
+            {
+                throw new Exception("Password invalide (La taille doit etre comprise entre 6 et 127 caracteres)");
+
+            }
         }
 
         public function setEmail($email)
