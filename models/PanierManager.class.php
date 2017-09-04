@@ -22,9 +22,9 @@ class PanierManager
     {
         $paniers = new Pannier();
 
-        $paniers->setId_commande($id_commande);
-        $paniers->setId_produit($id_produit);
-        $paniers->setId_user($id_user);
+        $paniers->setIdCommande($id_commande);
+        $paniers->setIdProduit($id_produit);
+        $paniers->setIdUser($id_user);
 
         $sql = "INSERT INTO paniers (id_commande, id_produit, id_user) VALUES (?, ?, ?)";
         $query = $this->pdo->prepare($sql);

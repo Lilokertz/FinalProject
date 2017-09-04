@@ -22,8 +22,8 @@ class CommandeManager
     {
         $commande = new Commande();
 
-        $commande->setId_user($id_user);
-        $commande->setNum_commande($num_commande);
+        $commande->setIdUser($id_user);
+        $commande->setNumCommande($num_commande);
         $commande->setValeur($valeur);
 
         $sql = "INSERT INTO commandes (id_user, num_commande, valeur) VALUES (?, ?, ?)";

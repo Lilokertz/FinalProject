@@ -24,8 +24,8 @@
             $comments = new Comments();
 
             $comments->setContent($content);
-            $comments->setId_article($article);
-            $comments->setId_author($author);
+            $comments->setIdArticle($article);
+            $comments->setIdAuthor($author);
 
             $sql = "INSERT INTO comments (content, id_article, id_author) VALUES (?, ?, ?)";
     		$query = $this->pdo->prepare($sql);
