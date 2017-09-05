@@ -23,7 +23,7 @@
         {
             $sql = "SELECT * FROM users WHERE pseudo=?";
             $query = $this->pdo->prepare($sql);
-            $query->execute($pseudo);
+            $query->execute([$pseudo]);
             $user = $query->fetchObject('User');
             return $user;
         }

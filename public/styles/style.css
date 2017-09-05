@@ -163,6 +163,25 @@ footer{
 	width: 80%;
 	margin: auto;
 	background-color: grey;
+	text-align: center;
+}
+
+.bestArticle{
+	display: flex;
+	justify-content: space-around;
+	margin: 20px 20px;
+	border: 5px solid white;
+	background-color: lightgrey;
+}
+
+.bestArticle h5{
+	color: black;
+	font-size: 15px;
+}
+
+.bestArticle p{
+	color: black;
+	font-weight: bold;
 }
 
 .slider{
@@ -170,6 +189,28 @@ footer{
 	height: 80%;
 	margin: auto;
 	padding-top: 50px;
+}
+
+.aleatoireArticle{
+	display: flex;
+	justify-content: space-around;
+	margin: 20px 20px 0 20px;
+	border: 5px solid white;
+	background-color: lightgrey;
+}
+
+.aleatoireArticle h5{
+	color: black;
+	font-size: 15px;
+}
+
+.aleatoireArticle p{
+	color: black;
+	font-weight: bold;
+}
+
+.articles{
+	padding-bottom: 20px;
 }
 
 /* REGISTERED */
