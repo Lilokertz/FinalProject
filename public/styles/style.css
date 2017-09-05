@@ -419,3 +419,41 @@ footer{
 	padding: 10px 10px;
 	border-radius: 20px;
 }
+
+/* PANIER */
+
+.shopPanier{
+	background-color: white;
+	display: flex;
+	justify-content: space-around;
+	padding: 30px 30px;
+}
+
+
+.left article{
+	display: flex;
+	justify-content: space-around;
+	margin: auto;
+	border: solid 2px grey;
+	margin: 20px 20px;
+}
+
+.left{
+	width: 80%;
+}
+
+.right{
+	width: 10%;
+	border: 2px solid grey;
+	text-align: center;
+}
+
+
+.panierLeft{
+	width: 25%;
+}
+
+.panierRight{
+	width: 70%;
+	text-align: center;
+}

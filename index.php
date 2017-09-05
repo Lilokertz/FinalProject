@@ -8,7 +8,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=projet', 'root', 'troiswa', [
 
     $page = 'home';
 
-    $access = ["home", "registation", "login", "shop", "article"];
+    $access = ["home", "registation", "login", "shop", "article", "panier"];
 
     if (isset($_GET['page']))
 	{
