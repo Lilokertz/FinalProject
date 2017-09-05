@@ -32,8 +32,9 @@
             {
                 $this->pseudo = $pseudo;
             }
-            else{
-                throw new Exception("Login invalide(La taille doit etre comprise entre 4 et 64 caracteres)")
+            else
+            {
+                throw new Exception("Login invalide(La taille doit etre comprise entre 4 et 64 caracteres)");
             }
         }
 
@@ -46,7 +47,6 @@
             else
             {
                 throw new Exception("Password invalide (La taille doit etre comprise entre 6 et 127 caracteres)");
-
             }
         }
 

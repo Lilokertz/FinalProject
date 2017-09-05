@@ -13,7 +13,7 @@
         public function findById($id)
         {
             $sql = "SELECT * FROM users WHERE id=?";
-            $query = $this->pdo->prepare($pdo);
+            $query = $this->pdo->prepare($sql);
             $query->execute([$id]);
             $user = $query->fetchObject('User');
             return $user;
@@ -36,7 +36,7 @@
             $user->setPassword($password);
             $user->setEmail($email);
 
-            $pdo = "INSERT INTO users (pseudo, password, email) VALUES(?, ?, ?)";
+            $sql = "INSERT INTO users (pseudo, password, email) VALUES(?, ?, ?)";
             $query = $this->pdo->prepare($sql);
             $query->execute([$user->getPseudo(), $user->getPassword(), $user->getEmail()]);
             $id = $this->pdo->lastInsertId();

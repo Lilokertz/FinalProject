@@ -27,6 +27,8 @@ $pdo = new PDO('mysql:host=localhost;dbname=projet', 'root', 'troiswa', [
 
 	}
 
+    require('models/User.class.php');
+    require('models/UserManager.class.php');
     require('apps/traitements/traitementUser.php');
     require('apps/skel.php');
 ?>
