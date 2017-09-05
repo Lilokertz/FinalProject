@@ -1,5 +1,11 @@
 <?php
 
+$pdo = new PDO('mysql:host=localhost;dbname=projet', 'root', 'troiswa', [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+    ]);
+    $pdo->exec('SET NAMES UTF8');
+
+
     $page = 'home';
 
     $access = ["home", "registation", "login"];
@@ -21,7 +27,6 @@
 
 	}
 
+    require('apps/traitements/traitementUser.php');
     require('apps/skel.php');
-    require('apps/traitements/user.php');
-    require('apps/traitements/registation.php');
 ?>

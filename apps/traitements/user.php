@@ -1,5 +1,6 @@
 <?php
 $error = '';
+
 if (isset($_POST['pseudo'], $_POST['password']))
 {
 	$login = $_POST['pseudo'];
@@ -15,7 +16,7 @@ if (isset($_POST['pseudo'], $_POST['password']))
 	{
 		if ($user['password'] == $_POST['pseudo'])
 		{
-			echo "ok";
+			$error = "Bienvenue !";
 		}
 		else
 			$error = "Mot de passe invalide";

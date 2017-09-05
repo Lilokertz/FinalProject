@@ -216,6 +216,15 @@ footer{
 	border-radius: 10px;
 }
 
+.registation button{
+	margin-bottom: 50px;
+	border: white solid 2px;
+	background-color: black;
+	padding: 5px 10px;
+	border-radius: 10px;
+	color: white
+}
+
 /* LOGIN */
 
 .login{
@@ -254,4 +263,13 @@ footer{
 	background-color: black;
 	padding: 5px 10px;
 	border-radius: 10px;
+}
+
+.login button{
+	margin-bottom: 50px;
+	border: white solid 2px;
+	background-color: black;
+	padding: 5px 10px;
+	border-radius: 10px;
+	color: white
 }
