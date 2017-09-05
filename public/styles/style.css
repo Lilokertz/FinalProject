@@ -174,7 +174,7 @@ footer{
 
 /* REGISTERED */
 
-.registered{
+.registation{
 	color: white;
 	text-align: center;
 	background-image: url("https://images2.alphacoders.com/249/thumb-1920-249150.jpg");
@@ -187,19 +187,19 @@ footer{
 	font-weight: bold;
 }
 
-.registered form{
+.registation form{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	margin: auto;
 }
 
-.registered h4{
+.registation h4{
 	margin-top: 0;
 	padding-top: 20px;
 }
 
-.registered input{
+.registation input{
 	border: solid 2px white;
 	border-radius: 40px;
 	padding: 10px 40px;
@@ -208,7 +208,7 @@ footer{
 	margin-bottom: 40px;
 }
 
-.registered a{
+.registation a{
 	margin-bottom: 50px;
 	border: white solid 2px;
 	background-color: black;
