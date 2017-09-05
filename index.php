@@ -1,9 +1,9 @@
 <?php
 
-    $page = 'registation';
+    $page = 'login';
 
-    $access = ["home, registation"];
-/*
+    $access = ["home, registation, login"];
+
     if (in_array($_GET['page'], $access)) // http://php.net/manual/fr/function.in-array.php
         {
             $page = $_GET['page'];
@@ -12,7 +12,8 @@
         else
         {
             header('Location: index.php');
+            exit();
         }
-*/
+
     require('apps/skel.php');
 ?>

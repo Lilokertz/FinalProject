@@ -38,6 +38,7 @@ header{
     background-image: url("https://www.walldevil.com/wallpapers/w02/849242-artwork-bahamut-dragons-fantasy-art-guild-wars-2-gw2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+	background-position: top;
     color: white;
 }
 
@@ -176,9 +177,14 @@ footer{
 .registered{
 	color: white;
 	text-align: center;
-	background-color: grey;
+	background-image: url("https://images2.alphacoders.com/249/thumb-1920-249150.jpg");
+	background-position: top;
+	background-size: cover;
+	background-repeat: no-repeat;
 	width: 80%;
 	margin: auto;
+	color: black;
+	font-weight: bold;
 }
 
 .registered form{
@@ -186,4 +192,66 @@ footer{
 	flex-direction: column;
 	align-items: center;
 	margin: auto;
+}
+
+.registered h4{
+	margin-top: 0;
+	padding-top: 20px;
+}
+
+.registered input{
+	border: solid 2px white;
+	border-radius: 40px;
+	padding: 10px 40px;
+	text-align: center;
+	background-color: lightgrey;
+	margin-bottom: 40px;
+}
+
+.registered a{
+	margin-bottom: 50px;
+	border: white solid 2px;
+	background-color: black;
+	padding: 5px 10px;
+	border-radius: 10px;
+}
+
+/* LOGIN */
+
+.login{
+	background-color: grey;
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	padding-bottom: 50px;
+	color: white;
+}
+
+.login h4{
+	margin-top: 0;
+	padding-top: 20px;
+}
+
+.login form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: auto;
+}
+
+.login input{
+	border: solid 2px white;
+	border-radius: 40px;
+	padding: 10px 40px;
+	text-align: center;
+	background-color: lightgrey;
+	margin-bottom: 40px;
+}
+
+.login a{
+	margin-bottom: 50px;
+	border: white solid 2px;
+	background-color: black;
+	padding: 5px 10px;
+	border-radius: 10px;
 }

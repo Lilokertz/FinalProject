@@ -1,6 +1,6 @@
 <?php
 
-    class ProduitsManager
+    class ProduitManager
     {
         private $pdo;
 
