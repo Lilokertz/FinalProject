@@ -346,6 +346,8 @@ footer{
 	border: 2px black solid;
 }
 
+/* SHOP DETAILS ARTICLE */
+
 .articleDetails{
 	color: white;
 	display: flex;
@@ -367,4 +369,53 @@ footer{
 
 .comments{
 	background-color: lightgrey;
+	color: white;
+	border: 2px solid grey;
+	width: 80%;
+	margin: auto;
+}
+
+.newComments h2{
+	color: black;
+}
+
+.comments li{
+	background-color: grey;
+	border :2px solid black;
+	width: 80%;
+	margin: 10px 10px;
+}
+
+.comments ul{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 30px;
+}
+
+.newComment{
+	color: white;
+	text-align: center;
+	background-color: grey;
+	border: lightgrey solid 2px;
+	width: 90%;
+	margin: auto;
+}
+
+.newComment form{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 50%;
+	margin: auto;
+}
+
+.newComment form label{
+	font-size: 20px;
+}
+
+.newComment form button{
+	margin: 20px auto;
+	width: 20%;
+	padding: 10px 10px;
+	border-radius: 20px;
 }
