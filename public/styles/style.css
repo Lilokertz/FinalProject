@@ -84,7 +84,7 @@ header nav a:hover{
 }
 
 header a{
-    padding: 14px 20px;
+    padding: 14px 100px;
 }
 
 header nav ul{
@@ -140,7 +140,7 @@ footer{
 
 .middleFooter div{
 	border: lightgray solid 2px;
-	padding: 10px;
+	width: 20%;
 	border-radius: 20px;
 	background-color: rgba(0, 0, 0, 0.5);
 }
@@ -327,15 +327,44 @@ footer{
 }
 
 .shop article{
-	width: 20%;
-	border: 2px black solid;
-	margin: 0 10px 20px 10px;
+	width: 100%;
 }
 
 .shop p{
 	margin: 0 0;
+	color: black
 }
 
 .shop h4{
 	margin: 0 0;
+	color: black
+}
+
+.shop a{
+	width: 20%;
+	margin: 0 10px 20px 10px;
+	border: 2px black solid;
+}
+
+.articleDetails{
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 30px;
+}
+
+.topLeft{
+	width: 25%;
+	text-align: center;
+	padding: 10px 10px;
+}
+
+.topRight{
+	width: 70%;
+	text-align: left;
+	padding: 10px 10px;
+}
+
+.comments{
+	background-color: lightgrey;
 }
