@@ -18,6 +18,15 @@
             return $produits;
         }
 
+        public function findAll()
+        {
+            $sql = "SELECT * FROM produits";
+            $query = $this->pdo->prepare($sql);
+            $query->execute();
+            $produits = $query->fetchAll(PDO::FETCH_CLASS, 'Produit');
+            return $produits;
+        }
+
         public function create($content, $media, $note, $price, $title)
         {
             $produits = new Produits();
