@@ -1,14 +1,15 @@
 <?php
 
+session_start();
+
 $pdo = new PDO('mysql:host=localhost;dbname=projet', 'root', 'troiswa', [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ]);
     $pdo->exec('SET NAMES UTF8');
 
-
     $page = 'home';
 
-    $access = ["home", "registation", "login", "shop", "article", "panier"];
+    $access = ["home", "registation", "login", "shop", "article", "panier", "logout"];
 
     if (isset($_GET['page']))
 	{
