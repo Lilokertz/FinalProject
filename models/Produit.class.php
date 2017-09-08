@@ -8,6 +8,21 @@
         private $price;
         private $title;
 
+        private $pdo;
+        private $comments;
+        
+        public function __construct($pdo)
+        {
+            $this->pdo = $pdo;
+        }
+
+        public function getComments()
+        {
+            $managerComment = new CommentManager($this->pdo);
+            $this->comments = $managerComment->findByArticle($this);
+            return $this->comments;
+        }
+
         public function getId()
         {
             return $this->id;

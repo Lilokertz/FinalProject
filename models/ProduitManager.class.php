@@ -14,7 +14,7 @@
             $sql = "SELECT * FROM produits WHERE id=?";
             $query = $this->pdo->prepare($sql);
             $query->execute([$_GET['id']]);
-            $produit = $query->fetchObject('Produit');
+            $produit = $query->fetchObject('Produit', [$this->pdo]);
             return $produit;
         }
 
@@ -23,7 +23,7 @@
             $sql = "SELECT * FROM produits";
             $query = $this->pdo->prepare($sql);
             $query->execute();
-            $produits = $query->fetchAll(PDO::FETCH_CLASS, 'Produit');
+            $produits = $query->fetchAll(PDO::FETCH_CLASS, 'Produit', [$this->pdo]);
             return $produits;
         }
 
@@ -32,7 +32,7 @@
             $sql = "SELECT * FROM produits ORDER BY RAND() LIMIT 5";
             $query = $this->pdo->prepare($sql);
             $query->execute();
-            $produits = $query->fetchAll(PDO::FETCH_CLASS, 'Produit');
+            $produits = $query->fetchAll(PDO::FETCH_CLASS, 'Produit', [$this->pdo]);
             return $produits;
         }
 
@@ -41,13 +41,13 @@
             $sql = "SELECT * FROM produits ORDER BY note DESC, RAND() LIMIT 5";
             $query = $this->pdo->prepare($sql);
             $query->execute();
-            $bestProduit = $query->fetchAll(PDO::FETCH_CLASS, 'Produit');
+            $bestProduit = $query->fetchAll(PDO::FETCH_CLASS, 'Produit', [$this->pdo]);
             return $bestProduit;
         }
 
         public function create($content, $media, $note, $price, $title)
         {
-            $produits = new Produits();
+            $produits = new Produits($this->pdo);
 
             $produits->setContent($content);
             $produits->setMedia($media);

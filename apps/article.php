@@ -10,8 +10,7 @@ $produit = $query->fetch();
 $manager = new ProduitManager($pdo);
 $produit = $manager->findById($_GET["id"]);
 
-$managerArticle = new CommentManager($pdo);
-$comments = $managerArticle->findById($_GET["id"]);
+
 
 require('views/article.phtml');
 

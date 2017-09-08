@@ -388,7 +388,8 @@ footer{
 
 .comments ul{
 	display: flex;
-	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	margin-bottom: 30px;
 }
 

@@ -1,14 +1,21 @@
-if (isset($_POST['action']))
+<?php
+var_dump($_POST);
+if(isset($_POST['action']))
 {
-	$action = $_POST['action'];
-	if ($action == 'create')
-	{
-		if (isset($_POST['title'], $_POST['content'], $_POST['picture']))
-		{
-			$manager = new ArticleManager($db);
-			$article = $manager->create($_POST['title'], $_POST['content'], $_POST['picture'], "toto");
-			header('Location: index.php?page=article&id='.$article->getId());
-			exit;
-		}
-	}
+    $action = $_POST['action'];
+    if ($action == 'create')
+    {
+        if(isset($_POST['content'],$_SESSION['id'], $_POST['id_article']))
+        {
+            $manager = new ProduitManager($pdo);
+            $produit = $manager->findById($_POST["id_article"]);
+            $manager = new UserManager($pdo);
+            $user = $manager->findById($_SESSION['id']);
+            $manager = new CommentManager($pdo);
+            $comment = $manager->create($_POST['content'], $produit, $user);
+            header('Location: index.php?page=home');
+            exit;
+        }
+    }
 }
+?>

@@ -1,6 +1,6 @@
 <?php
 
-foreach ($comments as $comment)
+foreach ($produit->getComments() as $comment)
 {
     require ('views/comment.phtml');
 }

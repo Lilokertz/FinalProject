@@ -1,3 +1,3 @@
 <?php
-require('views/registration.phtml');
+    require('views/registration.phtml');
 ?>

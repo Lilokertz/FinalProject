@@ -16,7 +16,8 @@
         <form method="post">
             <label for="content">--- Ecrire un commentaire ---</label>
             <textarea cols="50"  rows="10" name="content"></textarea>
-            <button type="button" name="button">Envoyer</button>
+            <button value="create" name="action">Envoyer</button>
+            <input type="hidden" name="id_article" value="<?= $produit->getId() ?>">
         </form>
         <div class="comments">
             <ul>

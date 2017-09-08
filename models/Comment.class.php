@@ -1,4 +1,5 @@
 <?php
+
     class Comment
     {
         private $id;
@@ -6,6 +7,18 @@
         private $date;
         private $id_article;
         private $id_author;
+
+        private $author;
+        private $article;
+
+        private $pdo;
+
+        public function __construct($pdo)
+        {
+            $this->pdo = $pdo;
+        }
+
+
 
         public function getId()
         {
@@ -22,14 +35,18 @@
             return $this->date;
         }
 
-        public function getIdArticle()
+        public function getArticle()
         {
-            return $this->id_article;
+            $manager = new ProduitManager($this->pdo);
+            $this->article = $manager->findById($this->id_article);
+            return $this->article;
         }
 
-        public function getIdAuthor()
+        public function getAuthor()
         {
-            return $this->id_author;
+            $manager = new UserManager($this->pdo);
+            $this->author = $manager->findById($this->id_author);
+            return $this->author;
         }
 
         public function setContent($content)
@@ -43,14 +60,16 @@
             }
         }
 
-        public function setIdArticle($id_article)
+        public function setArticle(Produit $article)
         {
-            $this->id_article = $id_article;
+            $this->id_article = $article->getId();
+            $this->article = $article;
         }
 
-        public function setIdAuthor($id_author)
+        public function setAuthor(User $author)
         {
-            $this->id_author = $id_author;
+            $this->id_author = $author->getId();
+            $this->author = $author;
         }
     }
 

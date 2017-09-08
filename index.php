@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+var_dump($_SESSION);
 
 $pdo = new PDO('mysql:host=localhost;dbname=projet', 'root', 'troiswa', [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
@@ -34,14 +35,11 @@ $pdo = new PDO('mysql:host=localhost;dbname=projet', 'root', 'troiswa', [
 	}
 
 
-    $accessTraitement = ["login" => "user", "registation" => "user", "logout" => "user"];
+    $accessTraitement = ["login" => "traitementUser", "logout" => "traitementUser", "article" => "comments"];
     if (isset($accessTraitement[$page]))
     {
 	    require('apps/traitements/'.$accessTraitement[$page].'.php');
     }
 
-    require('models/User.class.php');
-    require('models/UserManager.class.php');
-    require('apps/traitements/traitementUser.php');
     require('apps/skel.php');
 ?>

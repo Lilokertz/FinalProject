@@ -10,28 +10,35 @@
             $this->pdo = $pdo;
         }
 
+        public function findByArticle(Produit $produit)
+        {
+            $sql = "SELECT * FROM comments WHERE id_article=?";
+            $query = $this->pdo->prepare($sql);
+            $query->execute([$produit->getId()]);
+            $comment = $query->fetchAll(PDO::FETCH_CLASS,'Comment', [$this->pdo]);
+            return $comment;
+        }
+
         public function findById($id)
         {
             $sql = "SELECT comments.content, comments.date FROM comments INNER JOIN produits ON produits.id = comments.id_article WHERE id_article=?";
             $query = $this->pdo->prepare($sql);
             $query->execute([$_GET['id']]);
-            $comments = $query->fetchObject('Comment');
-            return $comments;
+            $comment = $query->fetchAll(PDO::FETCH_CLASS,'Comment', [$this->pdo]);
+            return $comment;
         }
 
-        public function create($content, $idArticle, $idAuthor)
+        public function create($content, Produit $article, User $author)
         {
-            $comments = new Comments();
+            $comment = new Comment($this->pdo);
 
-            $comments->setContent($content);
-            $comments->setIdArticle($article);
-            $comments->setIdAuthor($author);
+            $comment->setContent($content);
+            $comment->setArticle($article);
+            $comment->setAuthor($author);
 
             $sql = "INSERT INTO comments (content, id_article, id_author) VALUES (?, ?, ?)";
     		$query = $this->pdo->prepare($sql);
-    		$query->execute([$comments->getContent(),
-    						$comments->getIdArticle(),
-    						$comments->getIdAuthor()]);
+    		$query->execute([$comment->getContent(),$comment->getArticle()->getId(),$comment->getAuthor()->getId()]);
     		$id = $this->pdo->lastInsertId();
     		return $this->findById($id);
         }
