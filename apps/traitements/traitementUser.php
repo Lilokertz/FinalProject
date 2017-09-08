@@ -1,5 +1,5 @@
 <?php
-
+    var_dump($_POST);
     if (isset($_GET['page']) && $page == 'logout')
     {
         $_SESSION = [];

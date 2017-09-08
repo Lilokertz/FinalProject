@@ -35,7 +35,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=projet', 'root', 'troiswa', [
 	}
 
 
-    $accessTraitement = ["login" => "traitementUser", "logout" => "traitementUser", "article" => "comments"];
+    $accessTraitement = ["login" => "traitementUser", "logout" => "traitementUser", "article" => "comments", "registation" => "traitementUser"];
     if (isset($accessTraitement[$page]))
     {
 	    require('apps/traitements/'.$accessTraitement[$page].'.php');
