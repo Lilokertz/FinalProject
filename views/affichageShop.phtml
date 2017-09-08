@@ -1,0 +1,8 @@
+<a href="index.php?page=article&id=<?= $produit->getId() ?>">
+    <article>
+        <img src="<?= $produit->getMedia()?>" alt="pcs" />
+        <h4><?= $produit->getTitle() ?></h4>
+        <p>Note : <?= $produit->getNote()?> / 5</p>
+        <p><?= $produit->getPrice()?> €</p>
+    </article>
+</a>

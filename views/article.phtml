@@ -1,0 +1,27 @@
+<main class="article">
+    <article class="articleDetails">
+        <div class="topLeft">
+            <img src="<?=htmlentities($produit->getMedia()) ?>" alt="pcs" />
+            <p><?=htmlentities($produit->getPrice()) ?></p>
+            <button type="button" name="button"><i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter au panier</button>
+        </div>
+        <div class="topRight">
+            <h4><?=htmlentities($produit->getTitle()) ?></h4>
+            <p>Note : <?=htmlentities($produit->getNote()) ?> / 5 .</p>
+            <p><?=htmlentities($produit->getContent()) ?></p>
+        </div>
+    </article>
+    <aside class="newComment">
+        <h2>Commentaires</h2>
+        <form method="post">
+            <label for="content">--- Ecrire un commentaire ---</label>
+            <textarea cols="50"  rows="10" name="content"></textarea>
+            <button type="button" name="button">Envoyer</button>
+        </form>
+        <div class="comments">
+            <ul>
+                <?php require('apps/comment.php'); ?>
+            </ul>
+        </div>
+    </aside>
+</main>

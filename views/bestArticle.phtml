@@ -1,0 +1,9 @@
+<a href="index.php?page=article&id=<?= $bestProd->getId() ?>">
+    <article class="art1">
+        <h5><?= $bestProd->getTitle() ?></h5>
+        <img src="<?= $bestProd->getMedia()?>" alt="pcs" />
+        <p>
+            <?= $bestProd->getPrice()?>
+        </p>
+    </article>
+</a>
