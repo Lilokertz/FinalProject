@@ -1,10 +1,10 @@
 <li>
     <p>
-        <?=htmlentities($comment['content']) ?>
+        <?=htmlentities($comment->getContent()) ?>
     <p>
-        Auteur : <?=htmlentities($comment['author']) ?>
+        Auteur : <?=htmlentities($comment->getAuthor()) ?>
     </p>
     <p>
-        <?=htmlentities($comment['date']) ?>
+        <?=htmlentities($comment->getDate()) ?>
     </p>
 </li>

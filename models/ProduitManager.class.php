@@ -12,10 +12,10 @@
         public function findById($id)
         {
             $sql = "SELECT * FROM produits WHERE id=?";
-            $query = $this->pdo->prepare($pdo);
-            $query->execute([$id]);
-            $produits = $query->fetchObject('produit');
-            return $produits;
+            $query = $this->pdo->prepare($sql);
+            $query->execute([$_GET['id']]);
+            $produit = $query->fetchObject('Produit');
+            return $produit;
         }
 
         public function findAll()
@@ -25,6 +25,24 @@
             $query->execute();
             $produits = $query->fetchAll(PDO::FETCH_CLASS, 'Produit');
             return $produits;
+        }
+
+        public function findByRandom()
+        {
+            $sql = "SELECT * FROM produits ORDER BY RAND() LIMIT 5";
+            $query = $this->pdo->prepare($sql);
+            $query->execute();
+            $produits = $query->fetchAll(PDO::FETCH_CLASS, 'Produit');
+            return $produits;
+        }
+
+        public function findByBest()
+        {
+            $sql = "SELECT * FROM produits ORDER BY note DESC, RAND() LIMIT 5";
+            $query = $this->pdo->prepare($sql);
+            $query->execute();
+            $bestProduit = $query->fetchAll(PDO::FETCH_CLASS, 'Produit');
+            return $bestProduit;
         }
 
         public function create($content, $media, $note, $price, $title)

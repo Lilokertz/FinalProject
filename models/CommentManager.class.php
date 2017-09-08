@@ -12,9 +12,9 @@
 
         public function findById($id)
         {
-            $sql = "SELECT * FROM comments WHERE id=?";
-            $query = $this->pdo->prepare($pdo);
-            $query->execute([$id]);
+            $sql = "SELECT comments.content, comments.date FROM comments INNER JOIN produits ON produits.id = comments.id_article WHERE id_article=?";
+            $query = $this->pdo->prepare($sql);
+            $query->execute([$_GET['id']]);
             $comments = $query->fetchObject('Comment');
             return $comments;
         }
