@@ -15,7 +15,7 @@
             $sql = "SELECT * FROM users WHERE id=?";
             $query = $this->pdo->prepare($sql);
             $query->execute([$id]);
-            $user = $query->fetchObject('User');
+            $user = $query->fetchObject('User', [$this->pdo]);
             return $user;
         }
 
@@ -24,7 +24,7 @@
             $sql = "SELECT * FROM users WHERE pseudo=?";
             $query = $this->pdo->prepare($sql);
             $query->execute([$pseudo]);
-            $user = $query->fetchObject('User');
+            $user = $query->fetchObject('User', [$this->pdo]);
             return $user;
         }
 

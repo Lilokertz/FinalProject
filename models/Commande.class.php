@@ -5,7 +5,8 @@
         private $date;
         private $id_user;
         private $num_commande;
-        private $valeur;
+        private $price;
+        private $status;
 
         private $user;
         private $commande;
@@ -27,6 +28,11 @@
             return $this->date;
         }
 
+        public function getNumCommande()
+        {
+            return $this->num_commande;
+        }
+
         public function getIdUser()
         {
             $manager = new UserManager($this->pdo);
@@ -34,21 +40,36 @@
             return $this->user;
         }
 
-        public function getNumCommande()
+        public function getCommande()
         {
             $manager = new CommandeManager($this->pdo);
             $this->commande = $manager->findById($this->num_commande);
             return $this->commande;
         }
 
-        public function getValeur()
+        public function getPrice()
         {
-            return $this->valeur;
+            return $this->price;
         }
 
-        public function setValeur($valeur)
+        public function getStatus()
         {
-            $this->valeur = $valeur;
+            return $this->status;
+        }
+
+        public function setNumCommande($num_commande)
+        {
+            $this->num_commande = $num_commande;
+        }
+
+        public function setPrice($price)
+        {
+            $this->price = $price;
+        }
+
+        public function setStatus($status)
+        {
+            $this->status = $status;
         }
 
     }
