@@ -7,6 +7,16 @@
         private $num_commande;
         private $valeur;
 
+        private $user;
+        private $commande;
+
+        private $pdo;
+
+        public function __construct($pdo)
+        {
+            $this->pdo = $pdo;
+        }
+
         public function getId()
         {
             return $this->id;
@@ -19,27 +29,21 @@
 
         public function getIdUser()
         {
-            return $this->id_user;
+            $manager = new UserManager($this->pdo);
+            $this->user = $manager->findById($this->id_user);
+            return $this->user;
         }
 
         public function getNumCommande()
         {
-            return $this->num_commande;
+            $manager = new CommandeManager($this->pdo);
+            $this->commande = $manager->findById($this->num_commande);
+            return $this->commande;
         }
 
         public function getValeur()
         {
             return $this->valeur;
-        }
-
-        public function setNumCommande($num_commande)
-        {
-            $this->num_commande = $num_commande;
-        }
-
-        public function setIdUser($id_user)
-        {
-            $this->id_user = $id_user;
         }
 
         public function setValeur($valeur)

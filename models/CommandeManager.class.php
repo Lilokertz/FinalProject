@@ -14,8 +14,13 @@ class CommandeManager
         $sql = "SELECT * FROM commandes WHERE id=?";
         $query = $this->pdo->prepare($pdo);
         $query->execute([$id]);
-        $commande = $query->fetchObject('Commande');
+        $commande = $query->fetchObject('Commande', [$this->pdo]);
         return $commande;
+    }
+
+    public function findByUser(User $user)
+    {
+
     }
 
     public function create($idUser, $numCommande, $valeur)

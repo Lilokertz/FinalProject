@@ -6,6 +6,22 @@
         private $password;
         private $email;
 
+        private $commande;
+
+        private $pdo;
+
+        public function __construct($pdo)
+        {
+            $this->pdo = $pdo;
+        }
+
+        public function getCommande()
+        {
+            $manager = new CommandeManager($this->pdo);
+            $this->commande = $manager->findByUser($this);
+            return $this->commande;
+        }
+
         public function getId()
         {
             return $this->id;
