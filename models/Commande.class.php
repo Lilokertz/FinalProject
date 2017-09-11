@@ -33,18 +33,11 @@
             return $this->num_commande;
         }
 
-        public function getIdUser()
+        public function getUser()
         {
             $manager = new UserManager($this->pdo);
             $this->user = $manager->findById($this->id_user);
             return $this->user;
-        }
-
-        public function getCommande()
-        {
-            $manager = new CommandeManager($this->pdo);
-            $this->commande = $manager->findById($this->num_commande);
-            return $this->commande;
         }
 
         public function getPrice()
@@ -70,6 +63,12 @@
         public function setStatus($status)
         {
             $this->status = $status;
+        }
+
+        public function addProduit(Produit $produit)
+        {
+            $manager = new CommandeManager($this->pdo);
+            $this->produit = $manager->addProduit($this->produit);
         }
 
     }

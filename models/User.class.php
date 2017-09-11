@@ -6,7 +6,7 @@
         private $password;
         private $email;
 
-        private $commande;
+        private $panier;
 
         private $pdo;
 
@@ -15,11 +15,16 @@
             $this->pdo = $pdo;
         }
 
-        public function getCommande()
+        public function getPanier()
         {
             $manager = new CommandeManager($this->pdo);
-            $this->commande = $manager->findByUser($this);
-            return $this->commande;
+            $this->panier = $manager->findCartByUser($this);
+            if (!$this->panier)
+            {
+                $manager = new CommandeManager($this->pdo);
+                $this->panier = $manager->create($this);
+            }
+            return $this->panier;
         }
 
         public function getId()

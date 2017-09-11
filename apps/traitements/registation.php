@@ -40,11 +40,10 @@
         	{
         		$sql = 'INSERT INTO users (email, pseudo, password) VALUES(?, ?, ?)';
         		$query = $pdo->prepare($sql);
-        		$ret = $query->execute([$email, $pseudoInsc, $passwordInsc]); // http://php.net/manual/fr/pdostatement.execute.php
+        		$ret = $query->execute([$email, $pseudoInsc, $passwordInsc]); 
         		if ($ret === true)
         		{
         			$id = $pdo->lastInsertId();
-        			// 4 : Redirection
         			header('Location: index.php');
         			exit;
         		}
