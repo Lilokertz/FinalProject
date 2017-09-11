@@ -6,6 +6,14 @@
         private $id_produit;
         private $id_user;
 
+        private $pdo;
+        private $article;
+
+        public function __construct($pdo)
+        {
+            $this->pdo = $pdo;
+        }
+
         public function getId()
         {
             return $this->id;

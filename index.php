@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-var_dump($_SESSION);
+//var_dump($_SESSION);
 
 $pdo = new PDO('mysql:host=localhost;dbname=projet', 'root', 'troiswa', [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
