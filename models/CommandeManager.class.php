@@ -64,6 +64,8 @@ class CommandeManager
     {
         $sql = "INSERT INTO commandes (produit) VALUES (?)";
         $query = $this->pdo->prepare($sql);
+        $query->execute([$commande->getProduit]);
+        return $this->findById($commande->getId());
     }
 
 }
