@@ -31,7 +31,6 @@
 					$error = "L'article que vous avez essayez d'ajouter n'existe pas";
 			}
 		}
-
 		if ($action == 'delete')
    		{
         	if (isset($_SESSION['id'], $_POST['id_article']))
@@ -52,13 +51,13 @@
 							exit;
 						}
 						else
-							$error = "La commande que vous avez essayez d'ajouter n'existe pas";
+							$error = "hey";
 					}
 					else
-						$error = "L'user que vous avez essayez d'ajouter n'existe pas";
+						$error = "hey";
 				}
 				else
-					$error = "L'article que vous avez essayez d'ajouter n'existe pas";
+					$error = "hey";
 			}
     	}
 	}
