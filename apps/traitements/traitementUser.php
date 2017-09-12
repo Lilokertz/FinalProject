@@ -1,5 +1,5 @@
 <?php
-    //var_dump($_POST);
+    var_dump($_POST);
     if (isset($_GET['page']) && $page == 'logout')
     {
         $_SESSION = [];
@@ -17,7 +17,7 @@
             {
                 $manager = new UserManager($pdo);
                 $user = $manager->create($_POST['pseudo'],  $_POST['password'], $_POST['email']);
-                header('Location: index.php?page=home');
+                header('Location: index.php?page=login');
                 exit;
             }
         }
@@ -30,12 +30,13 @@
                 //$password = $manager->findByPseudo($_POST['password']);
                 if ($user && $_POST['password'] == $user->getPassword())
                 {
-                    var_dump("Bienvenue");
                     $_SESSION["id"] = $user->getId();
+                    header('Location: index.php');
+                    exit;
                 }
                 else
                 {
-                    var_dump("Vous avez entrez de mauvaise infos !");
+                    $error = "Vous avez entrez de mauvaise infos !";
                 }
 
             }

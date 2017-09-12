@@ -13,7 +13,7 @@
         {
             $sql = "SELECT * FROM produits WHERE id=?";
             $query = $this->pdo->prepare($sql);
-            $query->execute([$_GET['id']]);
+            $query->execute([$id]);
             $produit = $query->fetchObject('Produit', [$this->pdo]);
             return $produit;
         }
@@ -43,6 +43,15 @@
             $query->execute();
             $bestProduit = $query->fetchAll(PDO::FETCH_CLASS, 'Produit', [$this->pdo]);
             return $bestProduit;
+        }
+
+        public function findByCommande(Commande $commande)
+        {
+            $sql = "SELECT produits.* FROM produits INNER JOIN paniers ON paniers.id_produit=produits.id WHERE paniers.id_commande=?";
+            $query = $this->pdo->prepare($sql);
+            $query->execute([$commande->getId()]);
+            $produits = $query->fetchAll(PDO::FETCH_CLASS, 'Produit', [$this->pdo]);
+            return $produits;
         }
 
         public function create($content, $media, $note, $price, $title)

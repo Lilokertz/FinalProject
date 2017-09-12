@@ -30,7 +30,7 @@
 
         public function create($pseudo, $password, $email)
         {
-            $user = new User();
+            $user = new User($this->pdo);
 
             $user->setPseudo($pseudo);
             $user->setPassword($password);

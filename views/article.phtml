@@ -3,7 +3,7 @@
         <div class="topLeft">
             <img src="<?=htmlentities($produit->getMedia()) ?>" alt="pcs" />
             <p><?=htmlentities($produit->getPrice()) ?></p>
-            <form method="post">
+            <form method="post" action="index.php?page=panier">
                 <button value="add" name="action"><i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter au panier</button>
                 <input type="hidden" name="id_article" value="<?= $produit->getId() ?>">
             </form>

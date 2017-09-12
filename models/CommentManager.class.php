@@ -21,10 +21,10 @@
 
         public function findById($id)
         {
-            $sql = "SELECT comments.content, comments.date FROM comments INNER JOIN produits ON produits.id = comments.id_article WHERE id_article=?";
+            $sql = "SELECT * FROM comments WHERE id=?";
             $query = $this->pdo->prepare($sql);
             $query->execute([$_GET['id']]);
-            $comment = $query->fetchAll(PDO::FETCH_CLASS,'Comment', [$this->pdo]);
+            $comment = $query->fetchObject('Comment', [$this->pdo]);
             return $comment;
         }
 

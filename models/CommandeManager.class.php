@@ -60,11 +60,11 @@ class CommandeManager
             return $this->findById($commande->getId());
     }
 
-    public function addProduit()
+    public function addProduit(Commande $commande, Produit $produit)
     {
-        $sql = "INSERT INTO commandes (produit) VALUES (?)";
+        $sql = "INSERT INTO paniers (id_produit, id_commande) VALUES (?, ?)";
         $query = $this->pdo->prepare($sql);
-        $query->execute([$commande->getProduit]);
+        $query->execute([$produit->getId(), $commande->getId()]);
         return $this->findById($commande->getId());
     }
 

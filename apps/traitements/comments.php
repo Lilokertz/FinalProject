@@ -13,7 +13,8 @@ if(isset($_POST['action']))
             $user = $manager->findById($_SESSION['id']);
             $manager = new CommentManager($pdo);
             $comment = $manager->create($_POST['content'], $produit, $user);
-            header('Location: index.php?page=home');
+            var_dump($comment);
+            header('Location: index.php?page=article&id='.$comment->getArticle()->getId());
             exit;
         }
     }
