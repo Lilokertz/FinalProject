@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_SESSION['id']) == '4')
+if ($_SESSION['id'] == '4')
 {
     $manager = new UserManager($pdo);
     $user = $manager->findById($_SESSION['id']);
