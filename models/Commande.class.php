@@ -83,6 +83,12 @@
             return $manager->findByCommande($this);
         }
 
+        public function delPanier(Produit $produit)
+        {
+            $manager = newCommandeManager($this->pdo);
+            $manager->delete($this, $produit);
+        }
+
     }
 
 ?>

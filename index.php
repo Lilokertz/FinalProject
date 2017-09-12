@@ -3,7 +3,7 @@
 session_start();
 //var_dump($_SESSION);
 
-$pdo = new PDO('mysql:host=192.168.1.22;dbname=projet', 'projet', 'projet', [
+$pdo = new PDO('mysql:host=localhost;dbname=projet', 'projet', 'projet', [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ]);
     $pdo->exec('SET NAMES UTF8');

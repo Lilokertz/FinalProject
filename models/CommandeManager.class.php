@@ -68,6 +68,14 @@ class CommandeManager
         return $this->findById($commande->getId());
     }
 
+    public function delete(Commande $commande, Produit $produit)
+    {
+        $sql = "DELETE FROM paniers (id_produit, id_commande) VALUES (?, ?)";
+        $query = $this->pdo->prepare($sql);
+        $query->execute([$produit->getId(), $commande->getId()]);
+        return $this->findById($commande->getId());
+    }
+
 }
 
 ?>
