@@ -15,7 +15,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=projet', 'root', 'troiswa', [
 
     $page = 'home';
 
-    $access = ["home", "registation", "login", "shop", "article", "panier", "logout"];
+    $access = ["home", "registation", "login", "shop", "article", "panier", "logout", "admin"];
 
     if (isset($_GET['page']))
 	{
@@ -35,7 +35,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=projet', 'root', 'troiswa', [
 	}
 
 
-    $accessTraitement = ["login" => "traitementUser", "logout" => "traitementUser", "article" => "comments", "registation" => "traitementUser"];
+    $accessTraitement = ["login" => "traitementUser", "logout" => "traitementUser", "article" => "comments", "registation" => "traitementUser", "panier" => "panier"];
     if (isset($accessTraitement[$page]))
     {
 	    require('apps/traitements/'.$accessTraitement[$page].'.php');

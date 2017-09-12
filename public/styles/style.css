@@ -463,3 +463,29 @@ footer{
 	width: 70%;
 	text-align: center;
 }
+
+/* GESTION ADMIN */
+
+.admin form{
+	display: flex;
+	align-content: center;
+	flex-direction: column;
+	width: 30%;
+	color: white;
+	margin: auto;
+
+}
+
+.admin button{
+	width: 20%;
+	margin: 20px auto;
+}
+
+.admin{
+	text-align: center;
+	color: white;
+}
+
+.admin input{
+	margin: 5px 0 20px 0;
+}
