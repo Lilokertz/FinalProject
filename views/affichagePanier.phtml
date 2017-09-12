@@ -1,0 +1,14 @@
+<article>
+    <div class="panierLeft">
+        <img src="<?=$article->getMedia()?>" alt="pcs" />
+    </div>
+    <div class="panierRight">
+        <h4><?=$article->getTitle()?></h4>
+        <p><?=$article->getContent()?></p>
+        <p>
+            <?=$article->getPrice()?> €
+        </p>
+        <button value="delete" name="action">Supprimer</button>
+        <input type="hidden" name="id_article" value="<?= $article->getId() ?>">
+    </div>
+</article>
